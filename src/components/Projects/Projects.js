@@ -4,11 +4,7 @@ import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import { scroller } from "react-scroll";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 const Projects = () => {
-  AOS.init();
   const MainButton = styled(Button)({
     type: "button",
     appearance: "button",
@@ -57,7 +53,7 @@ const Projects = () => {
     });
   };
   return (
-    <div data-aos="zoom-in" className={classes.flexBox} name="projects">
+    <div className={classes.flexBox} name="projects">
       <div className={classes.flexTitle}>
         <div className={classes.square}></div>
         <h1 style={{ color: "var(--white)" }}>Projects</h1>

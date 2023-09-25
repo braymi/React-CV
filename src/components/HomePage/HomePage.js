@@ -10,11 +10,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 const HomePage = () => {
-  AOS.init();
   const MainButton = styled(Button)({
     appearance: "button",
     backfaceVisibility: "hidden",
@@ -121,7 +117,7 @@ const HomePage = () => {
   };
 
   return (
-    <div data-aos="zoom-in" className={classes.HomePageBody} name="home">
+    <div className={classes.HomePageBody} name="home">
       <div className={classes.bgFlexBox}>
         <div className={classes.smallSquare}>
           <div className={classes.topSmallSquare}>
@@ -146,7 +142,7 @@ const HomePage = () => {
           </div>
         </div>
         <div className={classes.squareDesc}>
-          <h1 className={classes.mainTitle}>EMBER</h1>
+          <h1 className={classes.mainTitle}>Howdy!</h1>
           <h2>Who am I and what do I do?</h2>
           <p>
             I consider myself a positive and mature person, who fights to
