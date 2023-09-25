@@ -18,7 +18,7 @@ const MobileNavigation = () => {
           duration={500}
           className={classes.navItem}
         >
-          <PersonIcon fontSize="large" />
+          <PersonIcon fontSize="medium" />
           About me
         </Link>
         <Link
@@ -28,7 +28,7 @@ const MobileNavigation = () => {
           duration={500}
           className={classes.navItem}
         >
-          <AppShortcutIcon fontSize="large" />
+          <AppShortcutIcon fontSize="medium" />
           Projects
         </Link>
         <Link
@@ -38,7 +38,7 @@ const MobileNavigation = () => {
           duration={500}
           className={classes.navItem}
         >
-          <ImportContactsIcon fontSize="large" />
+          <ImportContactsIcon fontSize="medium" />
           Resumé
         </Link>
         <Link
@@ -48,7 +48,7 @@ const MobileNavigation = () => {
           duration={500}
           className={classes.navItem}
         >
-          <ConnectWithoutContactIcon fontSize="large" />
+          <ConnectWithoutContactIcon fontSize="medium" />
           Contact
         </Link>
       </nav>

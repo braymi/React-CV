@@ -37,14 +37,16 @@
     margin-bottom: 2rem;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .flexBox {
-        padding: 0 10% 0 10%;
+        padding: 0 10%;
+        padding-bottom: 5rem;
     }
     .flexRow {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+        align-items: center;
 
         a {
             width: 100%;

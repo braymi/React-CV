@@ -22,7 +22,7 @@ function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const isMobile = windowDimension <= 850;
+  const isMobile = windowDimension <= 1000;
   return (
     <>
       {isMobile ? <MobileNavigation /> : <Navigation />}

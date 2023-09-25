@@ -21,7 +21,6 @@
     flex-direction: row;
     align-items: center;
     gap: 1rem;
-    margin-top: 2rem;
 }
 
 .square {
@@ -119,4 +118,31 @@ input, textarea {
     } 
 }
 
-//contactcard -> form -> formflex -> formname
+
+@media (max-width: 1000px) {
+    .ContactBody {
+        .flexBox {
+            padding: 0 10%;
+
+            .contactCard {
+                margin-bottom: 5rem;
+
+                .form {
+
+                    .formFlex {
+
+                        .formName {
+                            flex-direction: column;
+                            align-items: flex-start;
+                            width: 100%;
+
+                            .formFirstName, .formLastName {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        }
+}

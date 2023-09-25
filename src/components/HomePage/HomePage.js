@@ -127,13 +127,13 @@ const HomePage = () => {
             <h3>Junior Front End Developer</h3>
           </div>
           <div className={classes.squareSocial}>
-            <Link href="https://www.facebook.com/beres.raymond/">
+            <Link to="https://www.facebook.com/beres.raymond/">
               <FacebookIcon fontSize="large" />
             </Link>
-            <Link href="https://www.instagram.com/b.raymi">
+            <Link to="https://www.instagram.com/b.raymi">
               <InstagramIcon fontSize="large" />
             </Link>
-            <Link href="">
+            <Link to="https://www.linkedin.com/in/raymond-beres-7ab302291/">
               <LinkedInIcon fontSize="large" />
             </Link>
           </div>

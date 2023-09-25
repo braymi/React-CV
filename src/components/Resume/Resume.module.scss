@@ -26,6 +26,13 @@ h3 {
     gap: 2rem;
     padding-left: 30%;
     padding-right: 30%;
+    :nth-child(15) {
+        margin-bottom: 0;
+    }
+
+    :nth-child(11) {
+        margin-bottom: 0;
+    }
 }
 
 .flexTitle {
@@ -35,6 +42,10 @@ h3 {
     align-items: center;
     gap: 1rem;
     margin-top: 2rem;
+
+    h1 {
+        margin: 0;
+    }
 }
 
 .square {
@@ -50,13 +61,22 @@ h3 {
 .flexRow {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    h2 {
+        margin: 0;
+    }
+
+    button {
+        margin-top: 0;
+    }
 }
 
 .flexCard {
     display: flex;
     background-color: var(--white);
     box-shadow: var(--black) 0px 0.313rem 0.938rem;
-    padding: 3rem 0 3rem 3rem;
+    padding: 3rem;
     margin-bottom: 2rem;
 }
 
@@ -65,10 +85,35 @@ hr {
     border: 0.1rem solid var(--highlight);
 }
 
+.skillFlex {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    row-gap: 0;
+}
+
+.flexDetails {
+    width: 100%;
+}
+
+.titleBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    h2 {
+        margin: 0;
+    }
+}
+
 .skillElement {
     display: flex;
     align-items: center;
     gap: 0.2rem;
+
+    p {
+        font-weight: 500;
+    }
 }
 
 .skillSquare {
@@ -97,4 +142,40 @@ hr {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+}
+
+@media (max-width: 1000px) {
+    .ResumeBody {
+
+        .flexBox {
+            padding:0 10%;
+            .flexRow {
+                flex-direction: column-reverse;
+                align-items: center;
+                gap:2rem;
+
+                h2{
+                    margin-bottom: 0;
+                }
+
+                button {
+                    margin: 0;
+                    width: 100%;
+                }
+            }
+
+            .flexCard {
+                .skillFlex {
+                    .skillElement {
+                        .skillSquare {
+                            margin-top: 0;
+                        }
+                        p {
+                            margin-top: revert;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
