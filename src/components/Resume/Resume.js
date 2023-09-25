@@ -2,10 +2,13 @@ import classes from "./Resume.module.scss";
 
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
-import { motion } from "framer-motion";
 import Avatar from "@mui/material/Avatar";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Resume = () => {
+  AOS.init();
   const work = [
     {
       id: 0,
@@ -187,65 +190,63 @@ const Resume = () => {
   });
 
   return (
-    <motion.div name="resume">
-      <div className={classes.ResumeBody}>
-        <div className={classes.flexBox}>
-          <div className={classes.flexTitle}>
-            <div className={classes.square}></div>
-            <h1 style={{ color: "var(--white)" }}>Resumé</h1>
-          </div>
-          <div className={classes.flexRow}>
-            <h2 style={{ color: "var(--white)", fontWeight: "800" }}>
-              Work experience
-            </h2>
-            <MainButton>Download my Resumé</MainButton>
-          </div>
-          {work.map((work) => (
-            <div className={classes.flexCard}>
-              <div className={classes.flexDetails}>
-                <div className={classes.titleBox}>
-                  <h2>{work.date}</h2>
-                  <Avatar src={work.img} />
-                </div>
-                <h3>{work.post}</h3>
-                <p>{work.name}</p>
-                <p>{work.location}</p>
+    <div data-aos="zoom-in" className={classes.ResumeBody} name="resume">
+      <div className={classes.flexBox}>
+        <div className={classes.flexTitle}>
+          <div className={classes.square}></div>
+          <h1 style={{ color: "var(--white)" }}>Resumé</h1>
+        </div>
+        <div className={classes.flexRow}>
+          <h2 style={{ color: "var(--white)", fontWeight: "800" }}>
+            Work experience
+          </h2>
+          <MainButton>Download my Resumé</MainButton>
+        </div>
+        {work.map((work) => (
+          <div className={classes.flexCard}>
+            <div className={classes.flexDetails}>
+              <div className={classes.titleBox}>
+                <h2>{work.date}</h2>
+                <Avatar src={work.img} />
               </div>
+              <h3>{work.post}</h3>
+              <p>{work.name}</p>
+              <p>{work.location}</p>
             </div>
-          ))}
-          <div className={classes.flexRow}>
-            <h2 style={{ color: "var(--white)", fontWeight: "800" }}>
-              Education
-            </h2>
           </div>
-          {education.map((education) => (
-            <div className={classes.flexCard}>
-              <div className={classes.flexDetails}>
-                <div className={classes.titleBox}>
-                  <h2>{education.date}</h2>
-                  <Avatar src={education.img} />
-                </div>
-                <h3>{education.name}</h3>
-                <p>{education.place}</p>
-                <p>{education.address}</p>
+        ))}
+        <div className={classes.flexRow}>
+          <h2 style={{ color: "var(--white)", fontWeight: "800" }}>
+            Education
+          </h2>
+        </div>
+        {education.map((education) => (
+          <div className={classes.flexCard}>
+            <div className={classes.flexDetails}>
+              <div className={classes.titleBox}>
+                <h2>{education.date}</h2>
+                <Avatar src={education.img} />
               </div>
+              <h3>{education.name}</h3>
+              <p>{education.place}</p>
+              <p>{education.address}</p>
             </div>
-          ))}
-          <hr />
-          <div className={classes.flexCard} style={{ display: "block" }}>
-            <h2>Personal skillset</h2>
-            <div className={classes.skillFlex}>
-              {skillset.map((skill) => (
-                <div className={classes.skillElement}>
-                  <div class={classes.skillSquare}></div>
-                  <p>{skill.element}</p>
-                </div>
-              ))}
-            </div>
+          </div>
+        ))}
+        <hr />
+        <div className={classes.flexCard} style={{ display: "block" }}>
+          <h2>Personal skillset</h2>
+          <div className={classes.skillFlex}>
+            {skillset.map((skill) => (
+              <div className={classes.skillElement}>
+                <div class={classes.skillSquare}></div>
+                <p>{skill.element}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

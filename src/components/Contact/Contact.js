@@ -6,14 +6,17 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
 import { styled } from "@mui/material/styles";
-import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 
 import { TextareaAutosize } from "@mui/material";
 
 import emailjs from "emailjs-com";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Contact = () => {
+  AOS.init();
   const MainButton = styled(Button)({
     appearance: "button",
     backfaceVisibility: "hidden",
@@ -95,96 +98,95 @@ const Contact = () => {
   };
 
   return (
-    <motion.div ref={ref} name="contact">
-      <div className={classes.ContactBody}>
-        <div className={classes.flexBox}>
-          <div className={classes.flexTitle}>
-            <div className={classes.square}></div>
-            <h1 style={{ color: "var(--white)" }}>Contact me!</h1>
-          </div>
-          <div className={classes.contactCard}>
-            <form
-              for="SendMail"
-              className={classes.form}
-              onSubmit={sendEmail}
-              ref={ref}
-            >
-              <div className={classes.formFlex}>
-                <div className={classes.formName}>
-                  <div className={classes.formFirstName}>
-                    <label for="first_name">
-                      <h3>First Name</h3>
-                    </label>
-                    <input
-                      type="text"
-                      name="first_name"
-                      id="first_name"
-                      required
-                      autoComplete="off"
-                    />
-                  </div>
-                  <div className={classes.formLastName}>
-                    <label for="last_name">
-                      <h3>Last Name</h3>
-                    </label>
-                    <input
-                      type="text"
-                      name="last_name"
-                      id="last_name"
-                      required
-                      autoComplete="off"
-                    />
-                  </div>
+    <div
+      data-aos="zoom-in"
+      className={classes.ContactBody}
+      ref={ref}
+      name="contact"
+    >
+      <div className={classes.flexBox}>
+        <div className={classes.flexTitle}>
+          <div className={classes.square}></div>
+          <h1 style={{ color: "var(--white)" }}>Contact me!</h1>
+        </div>
+        <div className={classes.contactCard}>
+          <form
+            for="SendMail"
+            className={classes.form}
+            onSubmit={sendEmail}
+            ref={ref}
+          >
+            <div className={classes.formFlex}>
+              <div className={classes.formName}>
+                <div className={classes.formFirstName}>
+                  <label for="first_name">
+                    <h3>First Name</h3>
+                  </label>
+                  <input
+                    type="text"
+                    name="first_name"
+                    id="first_name"
+                    required
+                    autoComplete="off"
+                  />
                 </div>
-                <label for="email">
-                  <h3>Email</h3>
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  required
-                  autoComplete="off"
-                />
-                <label for="email_subject">
-                  <h3>Subject</h3>
-                </label>
-                <input type="text" name="email_subject" id="email_subject" />
-                <label for="message">
-                  <h3>Message</h3>
-                </label>
-                <TextareaAutosize
-                  name="message"
-                  id="message"
-                  required
-                  autoComplete="off"
-                />
+                <div className={classes.formLastName}>
+                  <label for="last_name">
+                    <h3>Last Name</h3>
+                  </label>
+                  <input
+                    type="text"
+                    name="last_name"
+                    id="last_name"
+                    required
+                    autoComplete="off"
+                  />
+                </div>
               </div>
-              <MainButton type="submit">Send</MainButton>
-              <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-              >
-                <Box sx={modalStyle}>
-                  <Typography
-                    id="modal-modal-title"
-                    variant="h6"
-                    component="h2"
-                  >
-                    Thank you!
-                  </Typography>
-                  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                    Your e-mail is successfully sent!
-                  </Typography>
-                </Box>
-              </Modal>
-            </form>
-          </div>
+              <label for="email">
+                <h3>Email</h3>
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                autoComplete="off"
+              />
+              <label for="email_subject">
+                <h3>Subject</h3>
+              </label>
+              <input type="text" name="email_subject" id="email_subject" />
+              <label for="message">
+                <h3>Message</h3>
+              </label>
+              <TextareaAutosize
+                name="message"
+                id="message"
+                required
+                autoComplete="off"
+              />
+            </div>
+            <MainButton type="submit">Send</MainButton>
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={modalStyle}>
+                <Typography id="modal-modal-title" variant="h6" component="h2">
+                  Thank you!
+                </Typography>
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  Your e-mail is successfully sent!
+                </Typography>
+              </Box>
+            </Modal>
+          </form>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

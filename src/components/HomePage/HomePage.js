@@ -10,7 +10,11 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const HomePage = () => {
+  AOS.init();
   const MainButton = styled(Button)({
     appearance: "button",
     backfaceVisibility: "hidden",
@@ -117,7 +121,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className={classes.HomePageBody} name="home">
+    <div data-aos="zoom-in" className={classes.HomePageBody} name="home">
       <div className={classes.bgFlexBox}>
         <div className={classes.smallSquare}>
           <div className={classes.topSmallSquare}>

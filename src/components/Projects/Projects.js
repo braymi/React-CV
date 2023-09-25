@@ -2,11 +2,13 @@ import classes from "./Projects.module.scss";
 
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
-import { motion, useScroll } from "framer-motion";
-import { useRef } from "react";
 import { scroller } from "react-scroll";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Projects = () => {
+  AOS.init();
   const MainButton = styled(Button)({
     type: "button",
     appearance: "button",
@@ -47,12 +49,6 @@ const Projects = () => {
     "&:hover": { backgroundColor: "#FF672D" },
   });
 
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "1rem end"],
-  });
-
   const scrollTo = () => {
     scroller.scrollTo("contact", {
       spy: true,
@@ -61,22 +57,20 @@ const Projects = () => {
     });
   };
   return (
-    <motion.div style={{ opacity: scrollYProgress }} ref={ref} name="projects">
-      <div className={classes.flexBox}>
-        <div className={classes.flexTitle}>
-          <div className={classes.square}></div>
-          <h1 style={{ color: "var(--white)" }}>Projects</h1>
-        </div>
-        <div className={classes.flexRow}>
-          <h2 style={{ color: "var(--white)" }}>
-            As of time, this section is empty
-          </h2>
-          <MainButton to="contact" onClick={scrollTo}>
-            You can help me expand, here
-          </MainButton>
-        </div>
+    <div data-aos="zoom-in" className={classes.flexBox} name="projects">
+      <div className={classes.flexTitle}>
+        <div className={classes.square}></div>
+        <h1 style={{ color: "var(--white)" }}>Projects</h1>
       </div>
-    </motion.div>
+      <div className={classes.flexRow}>
+        <h2 style={{ color: "var(--white)" }}>
+          As of time, this section is empty
+        </h2>
+        <MainButton to="contact" onClick={scrollTo}>
+          You can help me expand, here
+        </MainButton>
+      </div>
+    </div>
   );
 };
 
