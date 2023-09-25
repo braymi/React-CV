@@ -142,7 +142,7 @@ const HomePage = () => {
           </div>
         </div>
         <div className={classes.squareDesc}>
-          <h1 className={classes.mainTitle}>EMBER</h1>
+          <h1 className={classes.mainTitle}>Howdy!</h1>
           <h2>Who am I and what do I do?</h2>
           <p>
             I consider myself a positive and mature person, who fights to
