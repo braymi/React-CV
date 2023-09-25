@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
 import { styled } from "@mui/material/styles";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 
 import { TextareaAutosize } from "@mui/material";
@@ -54,10 +54,6 @@ const Contact = () => {
   });
 
   const ref = useRef();
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "33% end"],
-  });
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -99,7 +95,7 @@ const Contact = () => {
   };
 
   return (
-    <motion.div style={{ opacity: scrollYProgress }} ref={ref} name="contact">
+    <motion.div ref={ref} name="contact">
       <div className={classes.ContactBody}>
         <div className={classes.flexBox}>
           <div className={classes.flexTitle}>
