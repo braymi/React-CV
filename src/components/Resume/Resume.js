@@ -4,11 +4,7 @@ import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 const Resume = () => {
-  AOS.init();
   const work = [
     {
       id: 0,
@@ -190,7 +186,7 @@ const Resume = () => {
   });
 
   return (
-    <div data-aos="zoom-in" className={classes.ResumeBody} name="resume">
+    <div className={classes.ResumeBody} name="resume">
       <div className={classes.flexBox}>
         <div className={classes.flexTitle}>
           <div className={classes.square}></div>
