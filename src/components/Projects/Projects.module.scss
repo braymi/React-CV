@@ -1,0 +1,53 @@
+.flexBox {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-left: 30%;
+    padding-right: 30%;
+    h1 {
+        text-align:center;
+    }
+}
+
+.flexTitle {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.square {
+    background-color: var(--highlight);
+    width: 1rem;
+    height: 1rem;
+}
+
+.flexRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flexCard {
+    display: flex;
+    background-color: var(--white);
+    box-shadow: var(--black) 0px 0.313rem 0.938rem;
+    padding: 3rem 0 3rem 3rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 800px) {
+    .flexBox {
+        padding: 0 10% 0 10%;
+    }
+    .flexRow {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        a {
+            width: 100%;
+        }
+    }
+}

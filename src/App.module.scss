@@ -1,0 +1,27 @@
+:root {
+    --white: #ECE5F0;
+    --highlight: 
+    #EB5E28;
+    --black: #252422;
+    // --maincolor: #403D39;
+    --maincolor: #283248;
+    --secondarycolor: #D9D9D9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: var(--black);
+}
+
+a:hover, a:active {
+    color: var(--highlight);
+}
+
+body {
+  overflow: auto;
+}

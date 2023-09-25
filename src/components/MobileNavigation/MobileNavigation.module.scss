@@ -1,0 +1,29 @@
+.mobile {
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+    width: 100%;
+        .navFlex {
+            width: 100%;
+            background-color: var(--white);
+            height: 4rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            font-size: 1.2rem;
+
+            .navItem {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+                flex-wrap: wrap;
+
+                svg {
+                    align-self: center;
+                }
+            }
+        }
+}

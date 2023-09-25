@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import HomePage from "./components/HomePage/HomePage";
+import Navigation from "./components/Navigation/Navigation";
+import Resume from "./components/Resume/Resume";
+import Contact from "./components/Contact/Contact";
+import Projects from "./components/Projects/Projects";
+import { useEffect, useState } from "react";
+import MobileNavigation from "./components/MobileNavigation/MobileNavigation";
 
 function App() {
+  const [windowDimension, setWindowDimension] = useState(null);
+
+  useEffect(() => {
+    setWindowDimension(window.innerWidth);
+  }, []);
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimension(window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isMobile = windowDimension <= 850;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {isMobile ? <MobileNavigation /> : <Navigation />}
+      <HomePage />
+      <Projects />
+      <Resume />
+      <Contact />
+    </>
   );
 }
 
