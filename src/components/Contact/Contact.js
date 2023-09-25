@@ -12,11 +12,7 @@ import { TextareaAutosize } from "@mui/material";
 
 import emailjs from "emailjs-com";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 const Contact = () => {
-  AOS.init();
   const MainButton = styled(Button)({
     appearance: "button",
     backfaceVisibility: "hidden",
@@ -98,12 +94,7 @@ const Contact = () => {
   };
 
   return (
-    <div
-      data-aos="zoom-in"
-      className={classes.ContactBody}
-      ref={ref}
-      name="contact"
-    >
+    <div className={classes.ContactBody} ref={ref} name="contact">
       <div className={classes.flexBox}>
         <div className={classes.flexTitle}>
           <div className={classes.square}></div>
