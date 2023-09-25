@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/braymi/React-CV/static/css/main.797cda2f.css",
-    "main.js": "/braymi/React-CV/static/js/main.b5547749.js",
-    "static/js/787.e8871c4f.chunk.js": "/braymi/React-CV/static/js/787.e8871c4f.chunk.js",
-    "static/media/me.jpg": "/braymi/React-CV/static/media/me.b41834085904c51a91fd.jpg",
-    "index.html": "/braymi/React-CV/index.html",
-    "main.797cda2f.css.map": "/braymi/React-CV/static/css/main.797cda2f.css.map",
-    "main.b5547749.js.map": "/braymi/React-CV/static/js/main.b5547749.js.map",
-    "787.e8871c4f.chunk.js.map": "/braymi/React-CV/static/js/787.e8871c4f.chunk.js.map"
+    "main.css": "/React-CV/static/css/main.797cda2f.css",
+    "main.js": "/React-CV/static/js/main.52719996.js",
+    "static/js/787.e8871c4f.chunk.js": "/React-CV/static/js/787.e8871c4f.chunk.js",
+    "static/media/me.jpg": "/React-CV/static/media/me.b41834085904c51a91fd.jpg",
+    "index.html": "/React-CV/index.html",
+    "main.797cda2f.css.map": "/React-CV/static/css/main.797cda2f.css.map",
+    "main.52719996.js.map": "/React-CV/static/js/main.52719996.js.map",
+    "787.e8871c4f.chunk.js.map": "/React-CV/static/js/787.e8871c4f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.797cda2f.css",
-    "static/js/main.b5547749.js"
+    "static/js/main.52719996.js"
   ]
 }
