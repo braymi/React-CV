@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import SendIcon from "@mui/icons-material/Send";
 
 import { styled } from "@mui/material/styles";
 import { useRef, useState } from "react";
@@ -158,7 +159,9 @@ const Contact = () => {
                 autoComplete="off"
               />
             </div>
-            <MainButton type="submit">Send</MainButton>
+            <MainButton type="submit" endIcon={<SendIcon />}>
+              Send
+            </MainButton>
             <Modal
               open={open}
               onClose={handleClose}

@@ -3,6 +3,7 @@ import classes from "./Projects.module.scss";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import { scroller } from "react-scroll";
+import CardFunc from "./CardFunc";
 
 const Projects = () => {
   const MainButton = styled(Button)({
@@ -66,6 +67,7 @@ const Projects = () => {
           You can help me expand, here
         </MainButton>
       </div>
+      <CardFunc />
     </div>
   );
 };

@@ -196,7 +196,12 @@ const Resume = () => {
           <h2 style={{ color: "var(--white)", fontWeight: "800" }}>
             Work experience
           </h2>
-          <MainButton>Download my Resumé</MainButton>
+          <MainButton
+            href="https://drive.google.com/file/d/1Xcijr6O4Ev-35OIwapUfbc9OlJotyjQF/view?usp=sharing"
+            target="_blank"
+          >
+            Download my Resumé
+          </MainButton>
         </div>
         {work.map((work) => (
           <div className={classes.flexCard}>
