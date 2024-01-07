@@ -1,184 +1,144 @@
 /* Body */
 
 .ResumeBody {
-    background-color: var(--maincolor);
-    padding: 0;
-    margin: 0;
-    height: 100%;
-}
-
-h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-}
-
-h2 {
-    font-family: 'Montserrat', sans-serif;
-}
-
-h3 {
-    font-family: 'Quattrocento', serif;
-}
-
-.flexBox {
+  background-color: var(--maincolor);
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  .flexBox {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     padding-left: 30%;
     padding-right: 30%;
+
+    h1 {
+      text-align: center;
+    }
+    .flexTitle {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      .square {
+        background-color: var(--highlight);
+        width: 1rem;
+        height: 1rem;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 900;
+      }
+    }
+    .flexRow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h2 {
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      button {
+        margin-top: 0;
+      }
+      a {
+        color: white;
+      }
+    }
+    .flexCard {
+      display: flex;
+      background-color: var(--white);
+      box-shadow: var(--black) 0px 0.313rem 0.938rem;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      .flexDetails {
+        width: 100%;
+      }
+      .skillFlex {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        row-gap: 0;
+        .skillElement {
+          display: flex;
+          align-items: center;
+          gap: 0.2rem;
+
+          p {
+            font-weight: 500;
+          }
+          .skillSquare {
+            width: 0.7rem;
+            height: 0.7rem;
+            background-color: var(--highlight);
+          }
+        }
+      }
+    }
+    hr {
+      width: 50%;
+      border: 0.1rem solid var(--highlight);
+    }
     :nth-child(15) {
-        margin-bottom: 0;
+      margin-bottom: 0;
     }
 
     :nth-child(11) {
-        margin-bottom: 0;
+      margin-bottom: 0;
     }
-}
-
-.flexTitle {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 2rem;
-
-    h1 {
-        margin: 0;
-    }
-}
-
-.square {
-    background-color: var(--highlight);
-    width: 1rem;
-    height: 1rem;
-}
-
-.flexBox > h1 {
-    text-align:center;
-}
-
-.flexRow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    h2 {
-        margin: 0;
-    }
-
-    button {
-        margin-top: 0;
-    }
-    a {
-        color: white;
-        }
-}
-
-.flexCard {
-    display: flex;
-    background-color: var(--white);
-    box-shadow: var(--black) 0px 0.313rem 0.938rem;
-    padding: 3rem;
-    margin-bottom: 2rem;
-}
-
-hr {
-    width: 50%;
-    border: 0.1rem solid var(--highlight);
-}
-
-.skillFlex {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    row-gap: 0;
-}
-
-.flexDetails {
-    width: 100%;
+  }
 }
 
 .titleBox {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-    h2 {
-        margin: 0;
-    }
-}
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-.skillElement {
-    display: flex;
-    align-items: center;
-    gap: 0.2rem;
-
-    p {
-        font-weight: 500;
-    }
-}
-
-.skillSquare {
-    width: 0.7rem;
-    height: 0.7rem;
-    background-color: var(--highlight);
-}
-
-
-.contactCard {
-    background-color: var(--white);
-    box-shadow: var(--black) 0px 0.313rem 0.938rem;
-    padding: 3rem 3rem 3rem 3rem;
-}
-
-.formFlex {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    font-weight: 100;
-}
-
-.formName {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+  h2 {
+    margin: 0;
+  }
+  h3 {
+    font-family: "Quattrocento", serif;
+  }
 }
 
 @media (max-width: 1000px) {
-    .ResumeBody {
+  .ResumeBody {
+    .flexBox {
+      padding: 0 10%;
+      .flexRow {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 2rem;
 
-        .flexBox {
-            padding:0 10%;
-            .flexRow {
-                flex-direction: column-reverse;
-                align-items: center;
-                gap:2rem;
-
-                h2{
-                    margin-bottom: 0;
-                }
-
-                button {
-                    margin: 0;
-                    width: 100%;
-                }
-            }
-
-            .flexCard {
-                .skillFlex {
-                    .skillElement {
-                        .skillSquare {
-                            margin-top: 0;
-                        }
-                        p {
-                            margin-top: revert;
-                        }
-                    }
-                }
-            }
+        h2 {
+          margin-bottom: 0;
         }
+
+        a {
+          margin: 0;
+          width: 100%;
+        }
+      }
+
+      .flexCard {
+        .skillFlex {
+          .skillElement {
+            .skillSquare {
+              margin-top: 0;
+            }
+            p {
+              margin-top: revert;
+            }
+          }
+        }
+      }
     }
+  }
 }

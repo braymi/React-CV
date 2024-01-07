@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@fontsource-variable/inter-tight": "^5.0.19",
     "@iconify/react": "^4.1.1",
     "@mui/icons-material": "^5.14.9",
     "@mui/material": "^5.14.10",
@@ -15,6 +16,7 @@
     "emailjs-com": "^3.2.0",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-material-ui-carousel": "^3.4.2",
     "react-navbar-menu": "^1.0.3",
@@ -22,6 +24,7 @@
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
     "react-scroll-motion": "^0.3.2",
+    "react-scroll-to-top": "^3.0.0",
     "react-textarea-autosize": "^8.5.3",
     "sass": "^1.68.0",
     "web-vitals": "^2.1.4"
@@ -51,8 +54,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^6.0.0"
   }
 }

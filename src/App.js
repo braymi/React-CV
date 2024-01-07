@@ -5,24 +5,10 @@ import Contact from "./components/Contact/Contact";
 import Projects from "./components/Projects/Projects";
 import { useEffect, useState } from "react";
 import MobileNavigation from "./components/MobileNavigation/MobileNavigation";
+import ScrollToTop from "react-scroll-to-top";
+import { isMobile } from "react-device-detect";
 
 function App() {
-  const [windowDimension, setWindowDimension] = useState(null);
-
-  useEffect(() => {
-    setWindowDimension(window.innerWidth);
-  }, []);
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowDimension(window.innerWidth);
-    }
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const isMobile = windowDimension <= 1000;
   return (
     <>
       {isMobile ? <MobileNavigation /> : <Navigation />}
@@ -30,6 +16,15 @@ function App() {
       <Projects />
       <Resume />
       <Contact />
+      <ScrollToTop
+        smooth
+        color="#EB5E28"
+        style={
+          isMobile
+            ? { bottom: "7%", right: "7%", padding: "0" }
+            : { bottom: "5%", right: "5%", padding: "0" }
+        }
+      />
     </>
   );
 }

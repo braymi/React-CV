@@ -122,7 +122,7 @@ const HomePage = () => {
         <div className={classes.smallSquare}>
           <div className={classes.topSmallSquare}>
             <img src={require("./assets/me.jpg")} alt="" />
-            <h1>Raymond Beres</h1>
+            <h1 style={{ fontFamily: "Inter Tight" }}>Raymond Beres</h1>
             <hr />
             <h3>Junior Front End Developer</h3>
           </div>
