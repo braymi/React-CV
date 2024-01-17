@@ -149,7 +149,7 @@ const Resume = () => {
   const MainButton = styled(Button)({
     appearance: "button",
     backfaceVisibility: "hidden",
-    backgroundColor: "#EB5E28",
+    backgroundColor: "var(--highlight)",
     borderRadius: "0.3rem",
     borderWidth: "0",
     boxShadow:
@@ -190,12 +190,10 @@ const Resume = () => {
       <div className={classes.flexBox}>
         <div className={classes.flexTitle}>
           <div className={classes.square}></div>
-          <h1 style={{ color: "var(--white)" }}>Resumé</h1>
+          <h1>Resumé</h1>
         </div>
         <div className={classes.flexRow}>
-          <h2 style={{ color: "var(--white)", fontWeight: "800" }}>
-            Work experience
-          </h2>
+          <h2>Work experience</h2>
           <MainButton
             href="https://drive.google.com/file/d/1Xcijr6O4Ev-35OIwapUfbc9OlJotyjQF/view?usp=sharing"
             target="_blank"

@@ -7,6 +7,7 @@ import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import { scroller } from "react-scroll";
 import { Link } from "react-router-dom";
@@ -15,6 +16,11 @@ import kitchenImage from "./kitchen.png";
 import portfolioImage from "./portfolio.png";
 
 const Projects = () => {
+  const darkTheme = createTheme({
+    palette: {
+      mode: "dark",
+    },
+  });
   const projects = [
     {
       id: 0,
@@ -46,7 +52,7 @@ const Projects = () => {
   const MainButton = styled(Button)({
     appearance: "button",
     backfaceVisibility: "hidden",
-    backgroundColor: "#EB5E28",
+    backgroundColor: "var(--highlight)",
     borderRadius: "0.3rem",
     borderWidth: "0",
     boxShadow:
@@ -79,7 +85,7 @@ const Projects = () => {
       "Ubuntu,sans-serif",
     ].join(","),
     "&:disabled": { cursor: "default" },
-    "&:hover": { backgroundColor: "#FF672D" },
+    "&:hover": { backgroundColor: "var(--highlight)" },
   });
 
   const scrollTo = () => {
@@ -90,40 +96,43 @@ const Projects = () => {
     });
   };
   return (
-    <div className={classes.flexBox} name="projects">
-      <div className={classes.flexTitle}>
-        <div className={classes.square}></div>
-        <h1 style={{ color: "var(--white)" }}>Projects</h1>
+    <ThemeProvider theme={darkTheme}>
+      <div className={classes.flexBox} name="projects">
+        <div className={classes.flexTitle}>
+          <div className={classes.square}></div>
+          <h1 style={{ color: "var(--heading)" }}>Projects</h1>
+        </div>
+        <div className={classes.flexRow}>
+          <h2 style={{ color: "var(--heading)" }}>
+            As of time, I only have projects for myself
+          </h2>
+          <MainButton to="contact" onClick={scrollTo}>
+            You can help me expand, here
+          </MainButton>
+        </div>
+        <div className={classes.projects}>
+          {projects.map((project) => (
+            <Link to={project.link}>
+              <Card sx={{ minWidth: 300, maxWidth: 300 }}>
+                <CardHeader title={project.name} subheader={project.date} />
+                <CardMedia
+                  component="img"
+                  height="194"
+                  image={project.img}
+                  alt=""
+                  sx={{ padding: "0.5rem" }}
+                />
+                <CardContent>
+                  <Typography variant="body2" color="text.secondary">
+                    {project.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
+        </div>
       </div>
-      <div className={classes.flexRow}>
-        <h2 style={{ color: "var(--white)" }}>
-          As of time, I only have projects for myself
-        </h2>
-        <MainButton to="contact" onClick={scrollTo}>
-          You can help me expand, here
-        </MainButton>
-      </div>
-      <div className={classes.projects}>
-        {projects.map((project) => (
-          <Link to={project.link}>
-            <Card sx={{ minWidth: 300, maxWidth: 300 }}>
-              <CardHeader title={project.name} subheader={project.date} />
-              <CardMedia
-                component="img"
-                height="194"
-                image={project.img}
-                alt=""
-              />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  {project.description}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Link>
-        ))}
-      </div>
-    </div>
+    </ThemeProvider>
   );
 };
 

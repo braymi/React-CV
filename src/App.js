@@ -3,14 +3,20 @@ import Navigation from "./components/Navigation/Navigation";
 import Resume from "./components/Resume/Resume";
 import Contact from "./components/Contact/Contact";
 import Projects from "./components/Projects/Projects";
-import { useEffect, useState } from "react";
 import MobileNavigation from "./components/MobileNavigation/MobileNavigation";
 import ScrollToTop from "react-scroll-to-top";
 import { isMobile } from "react-device-detect";
+import useLocalStorage from "use-local-storage";
 
 function App() {
+  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [theme, setTheme] = useLocalStorage(
+    "theme",
+    defaultDark ? "dark" : "light"
+  );
+
   return (
-    <>
+    <div data-theme={theme}>
       {isMobile ? <MobileNavigation /> : <Navigation />}
       <HomePage />
       <Projects />
@@ -25,7 +31,7 @@ function App() {
             : { bottom: "5%", right: "5%", padding: "0" }
         }
       />
-    </>
+    </div>
   );
 }
 

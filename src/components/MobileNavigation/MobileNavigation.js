@@ -2,12 +2,31 @@ import classes from "./MobileNavigation.module.scss";
 
 import { Link } from "react-scroll";
 
+import { useState } from "react";
+
+import { DarkModeSwitch } from "react-toggle-dark-mode";
+import useLocalStorage from "use-local-storage";
+
 import PersonIcon from "@mui/icons-material/Person";
 import AppShortcutIcon from "@mui/icons-material/AppShortcut";
 import ImportContactsIcon from "@mui/icons-material/ImportContacts";
 import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
 
 const MobileNavigation = () => {
+  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [theme, setTheme] = useLocalStorage(
+    "theme",
+    defaultDark ? "dark" : "light"
+  );
+
+  const [isDarkMode, setDarkMode] = useState(theme === "dark" ? false : true);
+
+  const switchTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    setDarkMode(!isDarkMode);
+  };
+
   return (
     <header className={classes.mobile}>
       <nav className={classes.navFlex}>
@@ -51,6 +70,12 @@ const MobileNavigation = () => {
           <ConnectWithoutContactIcon fontSize="medium" />
           Contact
         </Link>
+        <DarkModeSwitch
+          checked={isDarkMode}
+          onChange={switchTheme}
+          moonColor="#121212"
+          sunColor="#ece5f0"
+        />
       </nav>
     </header>
   );

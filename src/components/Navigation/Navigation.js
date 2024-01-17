@@ -1,8 +1,28 @@
 import classes from "./Navigation.module.scss";
+import { useState } from "react";
 
-import { Link } from "react-scroll";
+import { Link, animateScroll as scroll } from "react-scroll";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
+import useLocalStorage from "use-local-storage";
 
 const Navigation = () => {
+  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [theme, setTheme] = useLocalStorage(
+    "theme",
+    defaultDark ? "dark" : "light"
+  );
+
+  const [isDarkMode, setDarkMode] = useState(theme === "dark" ? false : true);
+
+  const switchTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    setDarkMode(!isDarkMode);
+  };
+
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
   return (
     <header className={classes.desktop}>
       <nav>
@@ -12,7 +32,7 @@ const Navigation = () => {
             <h1 style={{ margin: "0 0.2rem 0 0.5rem", fontWeight: "bolder" }}>
               <Link
                 style={{ cursor: "pointer" }}
-                to="home"
+                onClick={scrollToTop}
                 spy={true}
                 smooth={true}
                 duration={500}
@@ -28,7 +48,7 @@ const Navigation = () => {
           <div className={classes.rightNav}>
             <Link
               style={{ cursor: "pointer" }}
-              to="home"
+              onClick={scrollToTop}
               spy={true}
               smooth={true}
               duration={500}
@@ -64,6 +84,13 @@ const Navigation = () => {
             >
               <h3>Contact</h3>
             </Link>
+            <DarkModeSwitch
+              style={{ marginLeft: "1rem" }}
+              checked={isDarkMode}
+              onChange={switchTheme}
+              moonColor="#121212"
+              sunColor="#ece5f0"
+            />
           </div>
         </div>
       </nav>

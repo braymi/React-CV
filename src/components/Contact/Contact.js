@@ -17,7 +17,7 @@ const Contact = () => {
   const MainButton = styled(Button)({
     appearance: "button",
     backfaceVisibility: "hidden",
-    backgroundColor: "#EB5E28",
+    backgroundColor: "var(--highlight)",
     borderRadius: "0.3rem",
     borderWidth: "0",
     boxShadow:
@@ -99,7 +99,7 @@ const Contact = () => {
       <div className={classes.flexBox}>
         <div className={classes.flexTitle}>
           <div className={classes.square}></div>
-          <h1 style={{ color: "var(--white)" }}>Contact me!</h1>
+          <h1>Contact me!</h1>
         </div>
         <div className={classes.contactCard}>
           <form

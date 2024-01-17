@@ -32,6 +32,7 @@
         margin: 0;
         font-family: "Montserrat", sans-serif;
         font-weight: 900;
+        color: var(--heading);
       }
     }
     .flexRow {
@@ -42,6 +43,8 @@
       h2 {
         margin: 0;
         font-family: "Montserrat", sans-serif;
+        color: var(--heading);
+        font-weight: 800;
       }
 
       button {
@@ -53,10 +56,11 @@
     }
     .flexCard {
       display: flex;
-      background-color: var(--white);
+      background-color: var(--secondarycolor);
       box-shadow: var(--black) 0px 0.313rem 0.938rem;
       padding: 3rem;
       margin-bottom: 2rem;
+      color: var(--text);
       .flexDetails {
         width: 100%;
       }

@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@1,900&display=swap");
-:root {
-  --white: #ece5f0;
-  --highlight: #eb5e28;
-  --black: #252422;
-  // --maincolor: #403D39;
-  --maincolor: #283248;
-  --secondarycolor: #d9d9d9;
-}
 
 * {
   box-sizing: border-box;
@@ -18,7 +10,7 @@ a:visited,
 a:hover,
 a:active {
   text-decoration: none;
-  color: var(--black);
+  color: var(--text);
 }
 
 a:hover,
@@ -95,7 +87,7 @@ body {
     h1 {
       margin: 0;
       font-size: 1.5rem;
-      color: var(--black);
+      color: var(--text);
       font-family: "Inter Tight", Courier, monospace;
     }
 
@@ -114,6 +106,7 @@ body {
     width: 25%;
     display: flex;
     flex-direction: column;
+    color: var(--text);
     .mainTitle {
       color: var(--highlight);
       font-family: "Oswald", sans-serif;
