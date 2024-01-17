@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import SendIcon from "@mui/icons-material/Send";
 
 import { styled } from "@mui/material/styles";
 import { useRef, useState } from "react";
@@ -16,7 +17,7 @@ const Contact = () => {
   const MainButton = styled(Button)({
     appearance: "button",
     backfaceVisibility: "hidden",
-    backgroundColor: "#EB5E28",
+    backgroundColor: "var(--highlight)",
     borderRadius: "0.3rem",
     borderWidth: "0",
     boxShadow:
@@ -98,7 +99,7 @@ const Contact = () => {
       <div className={classes.flexBox}>
         <div className={classes.flexTitle}>
           <div className={classes.square}></div>
-          <h1 style={{ color: "var(--white)" }}>Contact me!</h1>
+          <h1>Contact me!</h1>
         </div>
         <div className={classes.contactCard}>
           <form
@@ -158,7 +159,9 @@ const Contact = () => {
                 autoComplete="off"
               />
             </div>
-            <MainButton type="submit">Send</MainButton>
+            <MainButton type="submit" endIcon={<SendIcon />}>
+              Send
+            </MainButton>
             <Modal
               open={open}
               onClose={handleClose}

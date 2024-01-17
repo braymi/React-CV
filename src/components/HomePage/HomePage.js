@@ -14,7 +14,7 @@ const HomePage = () => {
   const MainButton = styled(Button)({
     appearance: "button",
     backfaceVisibility: "hidden",
-    backgroundColor: "#EB5E28",
+    backgroundColor: "var(--highlight)",
     borderRadius: "0.3rem",
     borderWidth: "0",
     boxShadow:
@@ -121,10 +121,10 @@ const HomePage = () => {
       <div className={classes.bgFlexBox}>
         <div className={classes.smallSquare}>
           <div className={classes.topSmallSquare}>
-            <img src={require("./assets/me.jpg")} alt="" />
-            <h1>Raymond Beres</h1>
+            <img src={require("./assets/me.jpg")} alt="Myself" />
+            <h1 style={{ fontFamily: "Inter Tight" }}>Raymond Beres</h1>
             <hr />
-            <h3>Junior Front End Developer</h3>
+            <h3 style={{ color: "var(--text)" }}>Junior Front End Developer</h3>
           </div>
           <div className={classes.squareSocial}>
             <Link to="https://www.facebook.com/beres.raymond/" target="_blank">
@@ -156,7 +156,7 @@ const HomePage = () => {
           <div className={classes.buttonFlex}>
             <MainButton
               variant="contained"
-              sx={{ backgroundColor: "#EB5E28" }}
+              sx={{ backgroundColor: "var(--highlight)" }}
               onClick={scrollToResume}
             >
               Resumé
@@ -164,7 +164,7 @@ const HomePage = () => {
 
             <SecondButton
               variant="outlined"
-              sx={{ color: "black", borderColor: "black" }}
+              sx={{ color: "var(--text)", borderColor: "var(--text)" }}
               onClick={scrollToProjects}
             >
               Projects

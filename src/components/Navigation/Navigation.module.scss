@@ -1,42 +1,42 @@
 .desktop {
-    position: sticky;
-    z-index: 2;
-    top: 0;
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+
+  nav {
     width: 100%;
+    background-color: var(--secondarycolor);
+    color: var(--text);
+    .navFlex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
 
-nav {
-    width: 100%;
-    background-color: var(--white);
-
-.navFlex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top:0;
-
-    .leftNav {
+      .leftNav {
         display: flex;
         margin-left: 1rem;
-        gap:0.5rem;
+        gap: 0.5rem;
         align-items: center;
-        padding:0;
+        padding: 0;
         text-align: center;
         justify-content: center;
         .headerSquare {
-            width: 1rem;
-            height: 1rem;
-            background-color: var(--highlight);
+          width: 1rem;
+          height: 1rem;
+          background-color: var(--highlight);
         }
-    }
-    
-    .rightNav {
+      }
+
+      .rightNav {
         display: flex;
         margin-right: 2rem;
         gap: 1rem;
         align-items: center;
-        font-family: 'Quattrocento', serif;
+        font-family: "Quattrocento", serif;
+      }
     }
-}
-}
+  }
 }

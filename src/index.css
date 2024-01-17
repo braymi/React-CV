@@ -1,7 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500&family=Roboto:wght@300;700&display=swap");
+
+:root {
+  --white: #ece5f0;
+  --highlight: #eb5e28;
+  --black: #252422;
+  --maincolor: #283248;
+  --secondarycolor: #ece5f0;
+  --text: #252422;
+  --heading: #ece5f0;
+}
+
+[data-theme="dark"] {
+  --white: #3d434e;
+  --highlight: #cc5121;
+  --black: #ece5f0;
+  --maincolor: #161c28;
+  --secondarycolor: #121212;
+  --text: #ffffffb3;
+  --heading: #ffffffb3;
+}
+
+/* [data-theme="dark"]  */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -10,10 +33,10 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-#root {
+/* #root {
   background-color: var(--maincolor);
-}
+} */

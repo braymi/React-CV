@@ -1,99 +1,94 @@
-:root {
-    --white: #ECE5F0;
-    --highlight: 
-    #EB5E28;
-    --black: #252422;
-    // --maincolor: #403D39;
-    --maincolor: #283248;
-    --secondarycolor: #D9D9D9;
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@1,900&display=swap");
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a:link,
 a:visited,
 a:hover,
 a:active {
-    text-decoration: none;
-    color: var(--black);
+  text-decoration: none;
+  color: var(--text);
 }
 
-a:hover, a:active {
-    color: var(--highlight);
+a:hover,
+a:active {
+  color: var(--highlight);
 }
 
 body {
   overflow-x: hidden;
-  display: block
+  display: block;
 }
 
 .HomePageBody {
-    background-color: var(--white);
-    padding: 0;
-    margin: 0;
-    width: 100%;
+  background-color: var(--white);
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
 .bgSquare {
-    background-color: var(--maincolor);
-    width: 40%;
-    height: 100vh;
-    position: relative;
+  background-color: var(--maincolor);
+  width: 40%;
+  height: 100vh;
+  position: relative;
 }
 
 .bgFlexBox {
-    display: flex;
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 
-    .smallSquare {
-      background-color: var(--secondarycolor);
-      position: relative;
-      width: 20%;
+  .smallSquare {
+    background-color: var(--secondarycolor);
+    position: relative;
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0.313rem 0.938rem;
+
+    img {
+      border-radius: 50%;
+      width: 50%;
+      height: auto;
+    }
+
+    .topSmallSquare {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      box-shadow: rgba(0, 0, 0, 0.5) 0px 0.313rem 0.938rem;
+      padding-top: 2rem;
+      gap: 1rem;
+    }
 
-      img {
-        border-radius: 50%;
-        width: 50%;
-        height: auto;
-      }
-
-      .topSmallSquare {
-        display: flex;
-        justify-content: space-evenly;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding-top: 2rem;
-        gap: 1rem;
-      }
-    
     .squareSocial {
-        width: 100%;
-        height: 5vh;
-        background-color: var(--white);
-        display: flex;
-        align-items: center;
-        justify-content:space-evenly;
-        padding: 1.5rem;
-        margin-top: 2rem;
+      width: 100%;
+      height: 5vh;
+      background-color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 1.5rem;
+      margin-top: 2rem;
     }
 
     h1 {
       margin: 0;
       font-size: 1.5rem;
-      color: var(--black);
+      color: var(--text);
+      font-family: "Inter Tight", Courier, monospace;
     }
 
     hr {
@@ -111,75 +106,79 @@ body {
     width: 25%;
     display: flex;
     flex-direction: column;
+    color: var(--text);
     .mainTitle {
       color: var(--highlight);
-      font-family: 'Oswald', sans-serif;
+      font-family: "Oswald", sans-serif;
       font-weight: 900;
+    }
+    p {
+      font-family: "Inter", sans-serif;
+      font-weight: 300;
+    }
+
+    .buttonFlex {
+      display: flex;
+      justify-content: space-around;
+      gap: 1rem;
+    }
   }
-
-  .buttonFlex {
-    display: flex;
-    justify-content: space-around;
-    gap: 1rem;
-}
-}
 }
 
-  @media (max-width: 1000px) {
-    body {
-        overflow: auto;
+@media (max-width: 1000px) {
+  body {
+    overflow: auto;
 
-        .HomePageBody{
+    .HomePageBody {
+      .bgFlexBox {
+        margin-top: 30vh;
+        flex-direction: column;
+        padding-right: 10%;
+        .smallSquare {
+          position: static;
+          width: 75%;
+          margin-top: 5rem;
 
-          .bgFlexBox{
-            margin-top: 30vh;
+          .topSmallSquare {
             flex-direction: column;
-            padding-right: 10%;
-            .smallSquare {
-                position: static;
-                width: 75%;
-                margin-top: 5rem;
-
-                .topSmallSquare {
-                  flex-direction: column;
-                }
-            }
-
-                .squareDesc {
-                  font-size: 1rem;
-                  height: 100vh;
-                  width: 100%;
-                  margin: 0;
-
-                  :first-child{
-                    width: 45%;
-                    text-align: center;
-                  }
-
-                  .buttonFlex {
-                    flex-direction: column;
-                    gap:0;
-                    align-self: flex-end;
-                    width: 50%;
-                    button {
-                      width: 100%;
-                    }
-                }
-                h2 {
-                  width:50%;
-                  align-self: flex-end;
-                }
-
-                p {
-                  width: 50%;
-                  align-self: flex-end;
-                }
-              }
-            
+          }
         }
-        .bgSquare {
-          height: 90rem;
+
+        .squareDesc {
+          font-size: 1rem;
+          height: 100vh;
+          width: 100%;
+          margin: 0;
+
+          :first-child {
+            width: 45%;
+            text-align: center;
+          }
+
+          .buttonFlex {
+            flex-direction: column;
+            gap: 0;
+            align-self: flex-end;
+            width: 50%;
+            margin-bottom: 5rem;
+            button {
+              width: 100%;
+            }
+          }
+          h2 {
+            width: 50%;
+            align-self: flex-end;
+          }
+
+          p {
+            width: 50%;
+            align-self: flex-end;
+          }
+        }
       }
+      .bgSquare {
+        height: 100rem;
       }
     }
   }
+}
